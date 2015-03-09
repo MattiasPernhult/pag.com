@@ -1,17 +1,46 @@
 package pag.com.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MovieBean implements Serializable {
 
 	private static final long serialVersionUID = -3168349974480377280L;
 	
+	private List<String> genres = new ArrayList<String>();
+	
+	private int id;
+	public int getId() {
+		return id;
+	}
+	
+	public List<String> getGenres() {
+		return this.genres;
+	}
+
+	public void setGenres(List<String> genres) {
+		this.genres = genres;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 	private String title; 
 	private String plot;
 	private double rating;
+	private String posterURL; 
 
 	public MovieBean() {
 		
+	}
+	
+	public String getPosterURL() {
+		return posterURL;
+	}
+
+	public void setPosterURL(String posterURL) {
+		this.posterURL = posterURL;
 	}
 	
 	public double getRating() {
