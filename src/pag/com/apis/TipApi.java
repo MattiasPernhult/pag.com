@@ -70,5 +70,14 @@ public class TipApi {
 		return Response.ok(response).build();
 	}
 	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8") 
+	@Path("/snacks")
+	public Response getSnacks(@Context Request request) {
+		SnacksBean snack = Helper.getRandomSnack();
+		String response = CustomJSONBuilder.buildSnack(snack);
+		return Response.ok(response).build();
+	}
+	
 	
 }
