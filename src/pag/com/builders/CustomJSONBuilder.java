@@ -20,6 +20,22 @@ public class CustomJSONBuilder {
 		return jsonObject.toString();
 	}
 	
+	public static String buildSnackDrink(SnacksBean snack, Object object) {
+		JsonElement snackElement = gson.toJsonTree(snack);
+		JsonElement drinkElement = gson.toJsonTree(object);
+		JsonObject json = new JsonObject();
+		json.add("snack", snackElement);
+		json.add("drink", drinkElement);
+		return json.toString();
+	}
+	
+	public static String buildDrinks(Object drink) {
+		JsonElement drinkElement = gson.toJsonTree(drink);
+		JsonObject json = new JsonObject();
+		json.add("drink", drinkElement);
+		return json.toString();
+	}
+	
 	public static String buildSnack(SnacksBean snack) {
 		JsonElement snackElement = gson.toJsonTree(snack);
 		JsonObject jsonObject = new JsonObject();
@@ -55,5 +71,4 @@ public class CustomJSONBuilder {
 		json.add("drink", drinkElement);
 		return json.toString();
 	}
-	
 }

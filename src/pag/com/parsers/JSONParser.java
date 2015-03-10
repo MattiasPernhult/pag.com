@@ -102,7 +102,7 @@ public class JSONParser {
 			}
 			return wines;
 		} catch (JSONException e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage() + " wineParser");
 			return null;
 		}
 	}
@@ -164,7 +164,7 @@ public class JSONParser {
 			}
 			return beans;
 		} catch (JSONException ex) {
-			System.out.println(ex.getMessage());
+			System.out.println(ex.getMessage() + "Movie nr1");
 		}
 		return null;
 	}
@@ -221,7 +221,7 @@ public class JSONParser {
 			}
 			return plot;
 		} catch (JSONException ex) {
-			System.out.println(ex.getMessage());
+			System.out.println(ex.getMessage() + " to parseTitleToPlot");
 		}
 		return null;
 	}

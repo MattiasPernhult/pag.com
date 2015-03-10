@@ -79,5 +79,22 @@ public class TipApi {
 		return Response.ok(response).build();
 	}
 	
+	@GET 
+	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+	@Path("snacks/drinks")
+	public Response getSnacksDrinks(@Context Request request) {
+		SnacksBean snack = Helper.getRandomSnack();
+		Object drink = Helper.getDrinks();
+		String response = CustomJSONBuilder.buildSnackDrink(snack, drink);
+		return Response.ok(response).build();
+	}
 	
+	@GET 
+	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+	@Path("/drinks")
+	public Response getDrinks(@Context Request request) {
+		Object drink = Helper.getDrinks();
+		String response = CustomJSONBuilder.buildDrinks(drink);
+		return Response.ok(response).build();
+	}
 }

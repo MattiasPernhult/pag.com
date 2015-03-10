@@ -31,6 +31,18 @@ public class Helper {
 		return snacks.get(random.nextInt(snacks.size()));
 	}
 	
+	public static Object getDrinks() {
+		Random random = new Random();
+		List<?> genericList;
+		int number = random.nextInt(2);
+		if (number == 0) {
+			genericList = findBeersForMovie(null);
+		} else {
+			genericList = findWinesForMovie(null, random.nextInt(2));
+		}
+		return genericList.get(random.nextInt(genericList.size()));
+	}
+	
 	public static Object getDrinksForMovie(List<String> genres) {
 		Random random = new Random();
 		List<?> genericList;
