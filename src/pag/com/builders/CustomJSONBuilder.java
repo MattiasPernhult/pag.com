@@ -20,6 +20,13 @@ public class CustomJSONBuilder {
 		return jsonObject.toString();
 	}
 	
+	public static String buildSnack(SnacksBean snack) {
+		JsonElement snackElement = gson.toJsonTree(snack);
+		JsonObject jsonObject = new JsonObject();
+		jsonObject.add("snack", snackElement);
+		return jsonObject.toString();
+	}
+	
 	public static String buildMovieSnack(MovieBean movie, SnacksBean snack) {
 		JsonElement movieElement = gson.toJsonTree(movie);
 		JsonElement snackElement = gson.toJsonTree(snack);
