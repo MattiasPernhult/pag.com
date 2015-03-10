@@ -13,10 +13,10 @@ public class CustomJSONBuilder {
 
 	private static Gson gson = new Gson();
 	
-	public static String buildMovies(List<MovieBean> movies) {
-		JsonElement movieElement = gson.toJsonTree(movies);
+	public static String buildMovies(MovieBean movie) {
+		JsonElement movieElement = gson.toJsonTree(movie);
 		JsonObject jsonObject = new JsonObject();
-		jsonObject.add("movies", movieElement);
+		jsonObject.add("movie", movieElement);
 		return jsonObject.toString();
 	}
 	

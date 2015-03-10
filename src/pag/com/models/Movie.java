@@ -99,5 +99,4 @@ public class Movie {
 		}
 		return returnMovies;
 	}
-
 }

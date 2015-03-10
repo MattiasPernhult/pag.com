@@ -30,7 +30,7 @@ public class TipApi {
 	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 	@Path("/movies")
 	public Response getMovieTip(@Context Request request) {
-		List<MovieBean> movies = Movie.getPopularMovies();
+		MovieBean movies = Movie.randomMovie();
 		String response = CustomJSONBuilder.buildMovies(movies);
 		return Response.ok(response).build();
 	}
@@ -41,8 +41,6 @@ public class TipApi {
 	public Response getMovieSnacksTip(@Context Request request) {
 		MovieBean movie = Movie.randomMovie();
 		List<SnacksBean> snacks = Helper.findSnacksForMovie(movie.getGenres());
-		if (snacks == null) 
-			System.out.println("null när listan hämtades");
 		SnacksBean snack = Helper.getRandomSnacksFromList(snacks);
 		String response = CustomJSONBuilder.buildMovieSnack(movie, snack);
 		return Response.ok(response).build();
