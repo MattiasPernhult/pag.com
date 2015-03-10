@@ -25,6 +25,12 @@ public class Helper {
 		return snacks.get(randomNumber);
 	}
 	
+	public static SnacksBean getRandomSnack() {
+		List<SnacksBean> snacks = Snack.getSnacks(0, 0);
+		Random random = new Random();
+		return snacks.get(random.nextInt(snacks.size()));
+	}
+	
 	public static Object getDrinksForMovie(List<String> genres) {
 		Random random = new Random();
 		List<?> genericList;
