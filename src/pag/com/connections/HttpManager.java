@@ -14,7 +14,7 @@ public class HttpManager {
 		try {
 			URL url = new URL(uri);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			
+						
 			StringBuilder sb = new StringBuilder();
 			reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			
@@ -23,7 +23,6 @@ public class HttpManager {
 				sb.append(line + "\n");
 			return sb.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
 			return null;
 		} finally {
 			if (reader != null) {

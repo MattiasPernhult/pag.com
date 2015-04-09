@@ -1,12 +1,17 @@
 package pag.com.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import pag.com.models.Links;
 
 public class SnacksBean implements Serializable {
 
 	private static final long serialVersionUID = -3168349974480377280L;
 	
 	private int id;
+	private List<Links> links;
 	private String name;
 	private String description;
 	private String kind;
@@ -14,7 +19,11 @@ public class SnacksBean implements Serializable {
 	private String posterURL;
 
 	public SnacksBean() {
-		
+		links = new ArrayList<Links>();
+	}
+	
+	public void setLinks(Links link) {
+		links.add(link);
 	}
 	
 	public int getId() {

@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import pag.com.models.Links;
+
 public class MovieBean implements Serializable {
 
 	private static final long serialVersionUID = -3168349974480377280L;
@@ -26,13 +28,19 @@ public class MovieBean implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	private List<Links> links;
 	private String title; 
 	private String plot;
 	private double rating;
 	private String posterURL; 
 
 	public MovieBean() {
-		
+		links = new ArrayList<Links>();
+	}
+	
+	public void setLinks(Links link) {
+		links.add(link);
 	}
 	
 	public String getPosterURL() {
