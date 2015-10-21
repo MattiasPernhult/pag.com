@@ -15,6 +15,6 @@ It uses 4 different APIs:
 * SnacksAPI (our own API)
 
 ### Contributors
-Mattias Pernhult - https://github.com/MattiasPernhult
-Felix Alhbin - https://github.com/alhbin
-Milan Gajic - https://github.com/supergajic
+* Mattias Pernhult - https://github.com/MattiasPernhult
+* Felix Alhbin - https://github.com/alhbin
+* Milan Gajic - https://github.com/supergajic
